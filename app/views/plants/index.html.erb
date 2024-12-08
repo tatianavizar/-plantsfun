@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+    <h1>Plants for <strong>everyone</strong>!</h1>
+    <p>Happy and green spaces for all</p>
+  </div>
+</div>
+<div class="container m-2">
+  <div class="row ">
+      <% @plants.each do |plant| %>
+    <div class="col d-flex justify-content-center">
+        <div class="card mt-2" style="width: 18rem;">
+          <div class="card-body">
+            <img src="<%= plant.image %>" class="card-img-top rounded mx-auto d-block" alt="<%= plant.name %>">
+            <h5 class="card-title"><%= plant.name %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= plant.category %></h6>
+            <p class="card-text">Level: <%= plant.level %>, price: <%= plant.price %>€</p>
+
+            <a href="#" class="btn btn-primary">details</a>
+            <a href="#" class="btn btn-primary">add to cart</a>
+          </div>
+        </div>
+    </div>
+      <% end %>
+  </div>
+</div>
