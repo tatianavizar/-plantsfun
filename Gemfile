@@ -28,6 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "devise"
 gem "ostruct"
+gem "pg_search"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

@@ -1,0 +1,19 @@
+.modal-img {
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 2px 0;
+  color:#333;
+}
