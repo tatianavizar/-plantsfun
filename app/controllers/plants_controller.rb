@@ -6,6 +6,7 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
+    
   end
 
 

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "cart" do  %>
+  <% if @cart.orderables.count > 0 %>
+    <%= render "cart/orderables" %>
+  <% else %>
+    <div class="alert alert-danger" role="alert">
+        Your cart is empty
+    </div>
+  <% end %>
+<% end %>

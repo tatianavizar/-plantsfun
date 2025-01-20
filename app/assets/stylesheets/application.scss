@@ -12,3 +12,136 @@
 @import "pages/index";
 @import "components/banner";
 @import "components/footer";
+@import "components/button";
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Default styles for smaller screens */
+.banner {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem;
+}
+.banner h1 {
+  font-size: 1.8rem;
+}
+.banner p {
+  font-size: 1rem;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Small devices (phones, <576px) */
+@media (max-width: 575.98px) {
+  .row {
+    margin: 0;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .cart-summary {
+    margin-top: 2rem;
+  }
+}
+
+/* Medium devices (tablets, 576px - 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .modal-body {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Large devices (desktops, 768px and above) */
+@media (min-width: 768px) {
+  .banner {
+    padding: 4rem;
+    text-align: left;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner p {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 20rem;
+  }
+
+  .modal-body {
+    flex-direction: row;
+  }
+
+  .cart-summary {
+    margin-top: 0;
+  }
+}
+
+/* Extra large devices (large desktops, >1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .modal-dialog {
+    max-width: 900px;
+  }
+
+  .banner {
+    background-position: center top;
+  }
+}
+

@@ -1,0 +1,8 @@
+<div id="<%= dom_id(orderable) %>" class="mb-3">
+  <div class=" d-flex justify-content-between gap-3">
+    <h5 class="text-start"><%= orderable.plant.name %></h5>
+    <div class="text-end">
+      <p class="mb-0"><%= orderable.plant.price * orderable.quantity %></p>
+    </div>
+  </div>
+</div>

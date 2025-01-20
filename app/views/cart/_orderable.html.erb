@@ -1,0 +1,42 @@
+<div id="<%= dom_id(orderable) %>" class="row cart-item mb-3">
+  <div class="card-cart mb-4">
+    <div class="card-body-cart">
+      <div class="row align-items-center" data-controller="quantity">
+        <!-- Image Column -->
+        <div class="col-12 col-md-3 text-center mb-3 mb-md-0">
+          <img src="<%= orderable.plant.image %>" class="img-fluid img-cart rounded" alt="<%= orderable.plant.name %>">
+        </div>
+
+        <!-- Plant Details Column -->
+        <div class="col-12 col-md-5 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="card-title"><%= orderable.plant.name %></h5>
+          <p class="mb-1">Unit price:</p>
+          <p data-quantity-target="price"><%= orderable.plant.price %></p>
+        </div>
+
+        <!-- Quantity Controls Column -->
+        <div class="col-12 col-md-2 text-center mb-3 mb-md-0">
+          <div class="input-group justify-content-center">
+            <%= button_to "-", decrement_quantity_cart_path(orderable.id), method: :patch, remote: true, class: "btn btn-outline-secondary btn-sm", disabled: (orderable.quantity <= 1), data: { action: "quantity#decrement" } %>
+            <input type="text" class="form-control form-control-sm text-center quantity-input" value="<%= orderable.quantity %>" data-quantity-target="quantity" data-action="input->quantity#changeTotal">
+            <%= button_to "+", increment_quantity_cart_path(orderable.id), method: :patch, remote: true, class: "btn btn-outline-secondary btn-sm", data: { action: "quantity#increment" } %>
+          </div>
+        </div>
+
+        <!-- Price and Delete Column -->
+        <div class="col-12 col-md-2 text-center text-md-end">
+          <h6 class="fw-bold">Price:</h6>
+          <span data-quantity-target="calculation"><%= orderable.plant.price * orderable.quantity %></span>
+          <form class="button_to mt-2" method="post" action="/cart/remove.turbo_stream">
+            <input type="hidden" name="_method" value="delete" autocomplete="off" />
+            <input type="hidden" name="id" value="<%= orderable.id %>" />
+            <button data-confirm="Are you sure you want to delete this item?" class="btn btn-outline-danger btn-sm" type="submit">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
